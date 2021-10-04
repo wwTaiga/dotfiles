@@ -9,6 +9,7 @@
             TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
         };
         packages = with pkgs; [
+            neovim
             lazygit
             ripgrep
             tmux
