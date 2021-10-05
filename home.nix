@@ -23,7 +23,7 @@
 
         file = {
             ".zshrc" = {
-                source = ./config/zsh;
+                source = ./config/zsh/.zshrc;
             };
         };
     };
