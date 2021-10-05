@@ -10,3 +10,9 @@ zstyle :compinstall filename '/home/taiga/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# Add path
+path=(
+    $path
+    ~/.cargo/bin
+)
