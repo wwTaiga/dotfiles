@@ -1,21 +1,19 @@
 local g = vim.g
 g.nvim_tree_ignore = { ".git" }
-g.nvim_tree_follow = 1
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_group_empty = 1
-g.nvim_tree_lsp_diagnostics = 1
 
 -- Integrate with project.nvim
-g.nvim_tree_update_cwd = 1
 g.nvim_tree_respect_buf_cwd = 1
 
 vim.cmd([[autocmd BufEnter NvimTree set cursorline]])
 
--- Keybindings
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
-g.nvim_tree_bindings = {
-	{ key = "<Tab>", cb = tree_cb("edit") },
-	{ key = ";", cb = tree_cb("preview") },
-}
+require("nvim-tree").setup({
+	update_cwd = true,
+	lsp_diagnostics = true,
+	update_focused_file = {
+		enable = true,
+	},
+})
