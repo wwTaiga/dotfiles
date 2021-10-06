@@ -1,3 +1,15 @@
+-- Lsp UI config
+local border = {
+	{ "🭽", "FloatBorder" },
+	{ "▔", "FloatBorder" },
+	{ "🭾", "FloatBorder" },
+	{ "▕", "FloatBorder" },
+	{ "🭿", "FloatBorder" },
+	{ "▁", "FloatBorder" },
+	{ "🭼", "FloatBorder" },
+	{ "▏", "FloatBorder" },
+}
+
 -- Make lsp config
 local function make_config()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -8,6 +20,12 @@ local function make_config()
 end
 -- Create on attach
 local general_on_attach = function(client)
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+		update_in_insert = true,
+	})
+
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 	end
@@ -91,3 +109,15 @@ require("lsp_signature").setup({
 
 -- Lsp trouble
 require("trouble").setup({})
+
+-- Lsp utils
+vim.lsp.handlers["textDocument/references"] = require("lsputil.locations").references_handler
+vim.lsp.handlers["textDocument/definition"] = require("lsputil.locations").definition_handler
+vim.lsp.handlers["textDocument/declaration"] = require("lsputil.locations").declaration_handler
+vim.lsp.handlers["textDocument/typeDefinition"] = require("lsputil.locations").typeDefinition_handler
+vim.lsp.handlers["textDocument/implementation"] = require("lsputil.locations").implementation_handler
+vim.lsp.handlers["textDocument/documentSymbol"] = require("lsputil.symbols").document_handler
+vim.lsp.handlers["workspace/symbol"] = require("lsputil.symbols").workspace_handler
+
+-- Lsp action lightbulb
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])

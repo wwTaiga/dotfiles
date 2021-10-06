@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+    fonts.fontconfig.enable = true;
+
     home = {
         username = "taiga";
         homeDirectory = "/home/taiga";
@@ -9,6 +11,7 @@
             TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
         };
         packages = with pkgs; [
+            bat
             cargo
             fzf
             gcc
@@ -19,6 +22,10 @@
             ripgrep
             rustc
             tmux
+
+            nodePackages.npm
+
+            (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
         ];
 
         file = {
@@ -29,12 +36,29 @@
     };
 
     programs = {
+        bat = {
+            enable = true;
+            config = {
+                theme = "GitHub";
+            };
+        };
         git = {
             enable = true;
             userName = "Taiga";
             userEmail = "qqtaiga@gmail.com";
+            extraConfig = {
+                core = {
+                  editor = "nvim";
+                };
+                color = {
+                  ui = true;
+                };
+            };
         };
         home-manager = {
+            enable = true;
+        };
+        zsh = {
             enable = true;
         };
     };
