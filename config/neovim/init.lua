@@ -18,7 +18,7 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.mouse = "a"
 vim.o.hidden = true
-vim.o.updatetime = 250
+vim.o.updatetime = 1000
 
 -- Highlight on yank
 vim.api.nvim_exec(
