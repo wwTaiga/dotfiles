@@ -16,3 +16,8 @@ path=(
     $path
     ~/.cargo/bin
 )
+
+# Theme
+autoload -U colors && colors
+PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+PROMPT='%F{magenta}%1~ %F{white}➜ '
