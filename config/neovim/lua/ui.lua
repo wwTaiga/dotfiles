@@ -6,7 +6,16 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff" },
+		lualine_b = {
+			"branch",
+			{
+				"diff",
+				colored = true,
+				color_added = "#3fb950",
+				color_modified = "#d29922",
+				color_removed = "#ff7b72",
+			},
+		},
 		lualine_c = { "filename" },
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
