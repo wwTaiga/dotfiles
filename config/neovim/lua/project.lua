@@ -1,4 +1,4 @@
-local actions = require("telescope.actions")
+local actions = require("telescope.actions.state")
 require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { ".git/" },
