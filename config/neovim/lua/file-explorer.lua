@@ -12,7 +12,9 @@ vim.cmd([[autocmd BufEnter NvimTree set cursorline]])
 
 require("nvim-tree").setup({
 	update_cwd = true,
-	lsp_diagnostics = true,
+	diagnostics = {
+		enable = true,
+	},
 	update_focused_file = {
 		enable = true,
 	},

@@ -12,10 +12,13 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"json5",
 		"lua",
-        "nix",
+		"nix",
 		"regex",
 		"tsx",
 		"typescript",
+	},
+	indent = {
+		enable = true,
 	},
 	highlight = {
 		enable = true,
