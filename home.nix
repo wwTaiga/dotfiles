@@ -12,7 +12,6 @@
         };
         packages = with pkgs; [
             bat
-            cargo
             fzf
             gcc
             gnumake
@@ -20,11 +19,22 @@
             neovim
             lazygit
             ripgrep
-            rustc
             tmux
 
-            nodePackages.npm
+            # C#
+            dotnet-sdk_5
 
+            # Rust
+            cargo
+            rustc
+
+            # Web development packages
+            nodejs
+            nodePackages.npm
+            nodePackages.eslint_d
+            nodePackages.prettier
+
+            # Suckless terminal (st)
             (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
             (st.overrideAttrs (oldAttrs: rec {
                 buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
