@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
 	-- Debugger
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
+	use("Pocco81/DAPInstall.nvim")
 	use("jbyuki/one-small-step-for-vimkind")
 	use({ "michaelb/sniprun", run = "bash install.sh" })
 
