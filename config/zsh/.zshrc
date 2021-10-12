@@ -53,3 +53,5 @@ unset initscript
 
 # alias for update zsh plugins
 alias zshpull="find ${ZDOTDIR:-$HOME}/.zsh_plugins -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull"
+# alias for home switch update
+alias hms="home-manager switch"
