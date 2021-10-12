@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
 	use({ "michaelb/sniprun", run = "bash install.sh" })
 
 	-- Editor Utils
-	use("terrortylor/nvim-comment")
+	use("numToStr/Comment.nvim")
 	use("ggandor/lightspeed.nvim")
 	use("blackCauldron7/surround.nvim")
 	use("windwp/nvim-autopairs")
@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
 	use("hoob3rt/lualine.nvim")
 	use("akinsho/bufferline.nvim")
 	use("glepnir/dashboard-nvim")
+	use("karb94/neoscroll.nvim")
 
 	-- Utils
 	use("akinsho/toggleterm.nvim")

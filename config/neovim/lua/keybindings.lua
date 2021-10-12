@@ -121,8 +121,8 @@ wk.register({
 		d = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go to next diagnostic" },
 	},
 	g = {
-		b = { "<cmd>BufferLinePick<cr>", "Pick buffer" },
-		B = { "<cmd>BufferLinePickClose<cr>", "Close buffer" },
+		t = { "<cmd>BufferLinePick<cr>", "Pick buffer" },
+		T = { "<cmd>BufferLinePickClose<cr>", "Close buffer" },
 		C = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>", "Close all other buffers" },
 		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
 		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },

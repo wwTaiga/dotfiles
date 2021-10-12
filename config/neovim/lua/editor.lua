@@ -2,9 +2,10 @@
 require("surround").setup({ mappings_style = "surround" })
 
 -- Commentary
-require("nvim_comment").setup({
-	hook = function()
-		require("ts_context_commentstring.internal").update_commentstring()
+require("Comment").setup({
+	---@diagnostic disable-next-line: unused-local
+	pre_hook = function(ctx)
+		return require("ts_context_commentstring.internal").calculate_commentstring()
 	end,
 })
 
@@ -40,3 +41,6 @@ require("tabout").setup({
 	ignore_beginning = true,
 	exclude = {},
 })
+
+-- Smooth scrolling
+require("neoscroll").setup()
