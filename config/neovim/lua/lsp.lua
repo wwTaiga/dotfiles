@@ -52,8 +52,8 @@ local lua_lsp_settings = {
 	},
 }
 
--- Typescript lsp setting
-local ts_on_attach = function(client)
+-- No format setting
+local no_format_on_attach = function(client)
 	client.resolved_capabilities.document_formatting = false
 	client.resolved_capabilities.document_range_formatting = false
 	general_on_attach(client)
@@ -64,8 +64,8 @@ local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
 	local config = make_config()
 
-	if server.name == "tsserver" then
-		config.on_attach = ts_on_attach
+	if server.name == "tsserver" or server.name == "jsonls" then
+		config.on_attach = no_format_on_attach
 	else
 		config.on_attach = general_on_attach
 	end
@@ -111,6 +111,7 @@ require("lsp_signature").setup({
 require("trouble").setup({})
 
 -- Lsp utils
+vim.lsp.handlers["textDocument/codeAction"] = require("lsputil.codeAction").code_action_handler
 vim.lsp.handlers["textDocument/references"] = require("lsputil.locations").references_handler
 vim.lsp.handlers["textDocument/definition"] = require("lsputil.locations").definition_handler
 vim.lsp.handlers["textDocument/declaration"] = require("lsputil.locations").declaration_handler

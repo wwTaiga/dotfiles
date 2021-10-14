@@ -68,7 +68,8 @@ wk.register({
 		},
 		l = {
 			name = "Lsp",
-			a = { "<cmd>CodeActionMenu<cr>", "Actions" },
+			-- a = { "<cmd>CodeActionMenu<cr>", "Actions" },
+			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
 			d = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Show diagnostics" },
 			i = { "<cmd>LspInfo<cr>", "Lsp info" },
 			l = {
