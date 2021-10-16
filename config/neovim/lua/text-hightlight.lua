@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"regex",
 		"tsx",
 		"typescript",
+		"yaml",
 	},
 	indent = {
 		enable = true,
