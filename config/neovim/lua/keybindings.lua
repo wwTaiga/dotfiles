@@ -29,8 +29,18 @@ end
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+vim.api.nvim_set_keymap(
+	"i",
+	"<S-Tab>",
+	"v:lua.s_tab_complete()",
+	{ expr = true }
+)
+vim.api.nvim_set_keymap(
+	"s",
+	"<S-Tab>",
+	"v:lua.s_tab_complete()",
+	{ expr = true }
+)
 ----------------------------------------------------------------------------------
 
 local wk = require("which-key")
@@ -48,7 +58,10 @@ wk.register({
 			n = { "<cmd>lua require('dap').step_over()<cr>", "Step over" },
 			r = { "<cmd>SnipRun<cr>", "Run code" },
 			s = { "<cmd>SnipClose<cr>", "Stop run code" },
-			t = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
+			t = {
+				"<cmd>lua require('dap').toggle_breakpoint()<cr>",
+				"Toggle breakpoint",
+			},
 		},
 		e = {
 			name = "Extensions / Plugins",
@@ -63,32 +76,56 @@ wk.register({
 		},
 		g = {
 			name = "Git",
-			b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Blane current line" },
+			b = {
+				"<cmd>Gitsigns toggle_current_line_blame<cr>",
+				"Blane current line",
+			},
 			g = { "<cmd>lua _Lazygit_toggle()<cr>", "Open git status" },
 		},
 		l = {
 			name = "Lsp",
 			-- a = { "<cmd>CodeActionMenu<cr>", "Actions" },
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
-			d = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Show diagnostics" },
+			d = {
+				"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>",
+				"Show diagnostics",
+			},
 			i = { "<cmd>LspInfo<cr>", "Lsp info" },
 			l = {
 				name = "List",
-				d = { "<cmd>TroubleToggle lsp_definitions<cr>", "Show definitions list" },
-				l = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Show diagnostics list" },
-				r = { "<cmd>TroubleToggle lsp_references<cr>", "Show references lsit" },
+				d = {
+					"<cmd>TroubleToggle lsp_definitions<cr>",
+					"Show definitions list",
+				},
+				l = {
+					"<cmd>TroubleToggle lsp_workspace_diagnostics<cr>",
+					"Show diagnostics list",
+				},
+				r = {
+					"<cmd>TroubleToggle lsp_references<cr>",
+					"Show references lsit",
+				},
 			},
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			s = { "<cmd>SymbolsOutline<cr>", "Symbol" },
-			t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
+			t = {
+				"<cmd>lua vim.lsp.buf.type_definition()<cr>",
+				"Type definition",
+			},
 			w = {
 				name = "Workspace",
-				a = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", "Add workspace" },
+				a = {
+					"<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>",
+					"Add workspace",
+				},
 				l = {
 					"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
 					"List workspace",
 				},
-				r = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove workspace" },
+				r = {
+					"<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>",
+					"Remove workspace",
+				},
 			},
 		},
 		p = {
@@ -109,27 +146,45 @@ wk.register({
 			j = { "<C-w>j", "Go to bottom window" },
 			k = { "<C-w>k", "Go to upper window" },
 			l = { "<C-w>l", "Go to right window" },
-			p = { "<cmd>lua require('nvim-window').pick()<cr>", "Pick window" },
+			p = {
+				"<cmd>lua require('nvim-window').pick()<cr>",
+				"Pick window",
+			},
 			q = { "<cmd>qa<cr>", "Quit Neovim" },
 			s = { "<cmd>sp<cr>", "Split horizontally" },
 			v = { "<cmd>vsp<cr>", "Split vertically" },
 		},
 	},
 	["<"] = {
-		d = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Go to prev diagnostic" },
+		d = {
+			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"Go to prev diagnostic",
+		},
 	},
 	[">"] = {
-		d = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Go to next diagnostic" },
+		d = {
+			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+			"Go to next diagnostic",
+		},
 	},
 	g = {
 		t = { "<cmd>BufferLinePick<cr>", "Pick buffer" },
 		T = { "<cmd>BufferLinePickClose<cr>", "Close buffer" },
-		C = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>", "Close all other buffers" },
+		C = {
+			"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
+			"Close all other buffers",
+		},
 		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
 		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
-		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Go to implementation" },
+		i = {
+			"<cmd>lua vim.lsp.buf.implementation()<cr>",
+			"Go to implementation",
+		},
 		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Go to references" },
 	},
 	K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show hover info" },
-	["<C-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Show signature help" },
+	["<C-k>"] = {
+		"<cmd>lua vim.lsp.buf.signature_help()<cr>",
+		"Show signature help",
+	},
 })
