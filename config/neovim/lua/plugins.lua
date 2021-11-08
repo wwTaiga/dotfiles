@@ -75,7 +75,7 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	-- Ui
-	use("projekt0n/github-nvim-theme")
+	use("folke/tokyonight.nvim")
 	use("hoob3rt/lualine.nvim")
 	use("akinsho/bufferline.nvim")
 	use("glepnir/dashboard-nvim")
@@ -83,5 +83,6 @@ return require("packer").startup(function(use)
 
 	-- Utils
 	use("akinsho/toggleterm.nvim")
+	use("nathom/filetype.nvim")
 	use("https://gitlab.com/yorickpeterse/nvim-window.git")
 end)

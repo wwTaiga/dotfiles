@@ -2,19 +2,13 @@
 require("lualine").setup({
 	options = {
 		disabled_filetypes = { "NvimTree" },
-		theme = "github",
+		theme = "tokyonight",
 	},
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = {
 			"branch",
-			{
-				"diff",
-				colored = true,
-				color_added = "#3fb950",
-				color_modified = "#d29922",
-				color_removed = "#ff7b72",
-			},
+			"diff",
 		},
 		lualine_c = { "filename" },
 		lualine_x = { "encoding", "fileformat", "filetype" },
@@ -24,11 +18,9 @@ require("lualine").setup({
 })
 
 -- Colorscheme
-require("github-theme").setup({
-	theme_style = "dark_default",
-	comment_style = "italic",
-	dark_sidebar = true,
-})
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_sidebars = { "NvimTree", "packer" }
+vim.cmd([[colorscheme tokyonight]])
 
 -- Tabline
 require("bufferline").setup({
