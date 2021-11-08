@@ -19,6 +19,7 @@ require("telescope").setup({
 require("telescope").load_extension("fzf")
 
 require("project_nvim").setup({
+	detection_method = { "pattern" },
 	show_hidden = true,
 })
 require("telescope").load_extension("projects")
