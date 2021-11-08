@@ -3,7 +3,8 @@ require("which-key").setup({})
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
 vim.api.nvim_set_keymap("n", "<esc>", "<cmd>:noh<cr><esc>", { noremap = true })
-
+-- C-H == C-BS in terminal
+vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 -- Luasnip Keybindings ----------------------------------------------------------
 local luasnip = require("luasnip")
 
@@ -180,7 +181,11 @@ wk.register({
 			"<cmd>lua vim.lsp.buf.implementation()<cr>",
 			"Go to implementation",
 		},
-		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Go to references" },
+		r = {
+			"<cmd>lua require('telescope.builtin').lsp_references("
+				.. "{layout_strategy='vertical'})<cr>",
+			"Go to references",
+		},
 	},
 	K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show hover info" },
 	["<C-k>"] = {

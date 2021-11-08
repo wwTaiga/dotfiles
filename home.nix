@@ -11,7 +11,6 @@
             TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
         };
         packages = with pkgs; [
-            bat
             fzf
             gcc
             gnumake
