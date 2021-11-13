@@ -18,7 +18,7 @@
             neovim
             lazygit
             ripgrep
-            tmux
+            # tmux
 
             # C#
             dotnet-sdk_5
@@ -89,6 +89,9 @@
 
     xdg = {
         configFile = {
+            kitty = {
+                source = ./config/kitty;
+            };
             nvim = {
                 source = ./config/neovim;
                 recursive = true;
@@ -99,5 +102,4 @@
             };
         };
     };
-
 }
