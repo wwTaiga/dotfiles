@@ -5,6 +5,12 @@ vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
 vim.api.nvim_set_keymap("n", "<esc>", "<cmd>:noh<cr><esc>", { noremap = true })
 -- C-H == C-BS in terminal
 vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
+
+-- S-CR to insert new line in insert mode, only work in certain terminal with extra
+-- config
+-- see: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+vim.api.nvim_set_keymap("i", "<S-cr>", "<C-o>o", { noremap = true })
+
 -- Luasnip Keybindings ----------------------------------------------------------
 local luasnip = require("luasnip")
 
