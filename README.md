@@ -1,14 +1,12 @@
 ## My Dotfiles
-
-## Config
-
-    chsh -s $(which zsh)  "change zsh as default
-
-## Prerequisite
-
-    stow
+My own development environment
 
 ## Installation
 
     git clone git@github.com:qqTaiga/dotfiles.git ~/dotfiles
-    run install.sh
+    cd dotfiles
+    sudo ./install.sh
+
+## Restow config files
+
+    restow

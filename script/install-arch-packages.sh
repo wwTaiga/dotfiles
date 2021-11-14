@@ -9,6 +9,8 @@ fi
 
 packages=(
     curl
+    docker
+    docker-compose
     fzf
     gcc
     make
@@ -44,3 +46,5 @@ packages=(
 )
 
 paru -S ${packages[@]} --needed
+
+unset packages
