@@ -21,14 +21,21 @@ packages=(
     ripgrep
     stow
     tmux
+    xclip
     zsh
 
     #font
     otf-nerd-fonts-fira-code
 
     # C# development
-    dotnet-runtime
+    dotnet-host
     dotnet-sdk
+    # .net 6
+    dotnet-runtime
+    aspnet-runtime
+    # .net 5
+    dotnet-runtime-5.0-bin
+    aspnet-runtime-5.0-bin
 
     rust
 
