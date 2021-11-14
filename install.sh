@@ -11,7 +11,7 @@ source ./script/install-npm-packages.sh
 groupadd docker
 usermod -aG docker ${USER}
 systemctl enable docker.service
-systemctl enable containerd.service
+# systemctl enable containerd.service
 
 # Change zsh as default shell
 chsh -s $(which zsh)
