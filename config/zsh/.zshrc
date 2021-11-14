@@ -11,14 +11,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Add environment variable
-# export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
-
 # Add path
 path=(
     $path
     ~/.cargo/bin
-    ~/.dotnet/tools
 )
 
 # Theme
