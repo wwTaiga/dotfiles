@@ -93,7 +93,7 @@ nl.config({
 		nl_f.stylua,
 
 		-- Web
-		nl_f.prettier,
+		nl_f.prettierd,
 		nl_d.eslint_d,
 	},
 })
