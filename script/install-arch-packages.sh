@@ -1,10 +1,11 @@
 #!/bin/bash
-pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
-rm -rf paru
+if ! [ -x "$(command -v paru)" ]; then
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+    cd ..
+    rm -rf paru
+fi
 
 packages=(
     curl
@@ -13,11 +14,17 @@ packages=(
     make
     git
     go
+    google-chrome
+    kitty
     neovim
     lazygit
     ripgrep
+    stow
     tmux
     zsh
+
+    #font
+    otf-nerd-fonts-fira-code
 
     # C# development
     dotnet-runtime
@@ -29,4 +36,4 @@ packages=(
     npm
 )
 
-echo "paru -S ${packages[@]}"
+paru -S ${packages[@]} --needed

@@ -12,7 +12,7 @@ compinit
 # End of lines added by compinstall
 
 # Add environment variable
-export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
+# export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
 
 # Add path
 path=(
@@ -58,4 +58,4 @@ unset initscript
 # alias for update zsh plugins
 alias zshpull="find ${ZDOTDIR:-$HOME}/.zsh_plugins -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull"
 # alias for home switch update
-alias hms="home-manager switch"
+alias restow=". ${HOME}/dotfiles/restow.sh"
