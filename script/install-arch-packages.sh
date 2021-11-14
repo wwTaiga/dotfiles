@@ -17,6 +17,7 @@ packages=(
     git
     go
     google-chrome
+    insomnia
     kitty
     neovim
     lazygit
@@ -24,6 +25,7 @@ packages=(
     stow
     tmux
     xclip
+    visual-studio-code-bin
     zsh
 
     #font
