@@ -11,6 +11,12 @@ vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 -- see: https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
 vim.api.nvim_set_keymap("i", "<S-cr>", "<C-o>o", { noremap = true })
 
+-- Alt + j/k to move line down/up
+vim.api.nvim_set_keymap("i", "<A-j>", "<cmd>:m+<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-j>", "<cmd>:m+<cr>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<A-k>", "<cmd>:m-2<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-k>", "<cmd>:m-2<cr>", { noremap = true })
+
 -- Luasnip Keybindings ----------------------------------------------------------
 local luasnip = require("luasnip")
 
@@ -69,6 +75,7 @@ wk.register({
 				"<cmd>lua require('dap').toggle_breakpoint()<cr>",
 				"Toggle breakpoint",
 			},
+			u = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle ui" },
 		},
 		e = {
 			name = "Extensions / Plugins",
@@ -168,6 +175,9 @@ wk.register({
 			"Go to prev diagnostic",
 		},
 	},
+	["<F5>"] = { "<cmd>lua require('dap').continue()<cr>", "Continue" },
+	["<F6>"] = { "<cmd>lua require('dap').step_over()<cr>", "Step over" },
+	["<F7>"] = { "<cmd>lua require('dap').step_into()<cr>", "Step into" },
 	[">"] = {
 		d = {
 			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
