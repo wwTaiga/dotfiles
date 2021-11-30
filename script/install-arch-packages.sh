@@ -11,6 +11,7 @@ packages=(
     curl
     docker
     docker-compose
+    fd
     fzf
     gcc
     make
