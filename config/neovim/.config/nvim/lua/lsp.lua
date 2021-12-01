@@ -1,14 +1,11 @@
 -- Lsp UI config
-local border = {
-	{ "╭", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "╮", "FloatBorder" },
-	{ "|", "FloatBorder" },
-	{ "╯", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "╰", "FloatBorder" },
-	{ "|", "FloatBorder" },
-}
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+local border = "rounded"
 
 -- Make lsp config
 local function make_config()
@@ -115,29 +112,12 @@ require("lsp_signature").setup({
 -- Lsp trouble
 require("trouble").setup({})
 
--- Lsp utils
-vim.lsp.handlers["textDocument/codeAction"] =
-	require("lsputil.codeAction").code_action_handler
-vim.lsp.handlers["textDocument/references"] =
-	require("lsputil.locations").references_handler
-vim.lsp.handlers["textDocument/definition"] =
-	require("lsputil.locations").definition_handler
-vim.lsp.handlers["textDocument/declaration"] =
-	require("lsputil.locations").declaration_handler
-vim.lsp.handlers["textDocument/typeDefinition"] =
-	require(
-		"lsputil.locations"
-	).typeDefinition_handler
-vim.lsp.handlers["textDocument/implementation"] =
-	require(
-		"lsputil.locations"
-	).implementation_handler
-vim.lsp.handlers["textDocument/documentSymbol"] =
-	require("lsputil.symbols").document_handler
-vim.lsp.handlers["workspace/symbol"] =
-	require("lsputil.symbols").workspace_handler
-
 -- Lsp action lightbulb
+vim.fn.sign_define(
+	"LightBulbSign",
+	{ text = " ", texthl = "DiagnosticWarn" }
+)
+
 vim.cmd(
 	[[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 )

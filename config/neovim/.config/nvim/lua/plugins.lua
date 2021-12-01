@@ -45,10 +45,7 @@ return require("packer").startup(function(use)
 	use("onsails/lspkind-nvim")
 	use("folke/trouble.nvim")
 	use("simrat39/symbols-outline.nvim")
-	-- use({ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" })
 	use("kosayoda/nvim-lightbulb")
-	use("RishabhRD/popfix")
-	use("RishabhRD/nvim-lsputils")
 
 	-- Project navigation
 	use("nvim-telescope/telescope.nvim")

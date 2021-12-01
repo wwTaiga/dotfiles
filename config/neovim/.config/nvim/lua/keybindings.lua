@@ -98,8 +98,11 @@ wk.register({
 		},
 		l = {
 			name = "Lsp",
-			-- a = { "<cmd>CodeActionMenu<cr>", "Actions" },
-			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Actions" },
+			a = {
+				"<cmd>lua require('telescope.builtin').lsp_code_actions("
+					.. "require('telescope.themes').get_cursor())<cr>",
+				"Actions",
+			},
 			d = {
 				"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>",
 				"Show diagnostics",
