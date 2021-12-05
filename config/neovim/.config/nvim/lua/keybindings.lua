@@ -194,10 +194,15 @@ wk.register({
 			"<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
 			"Close all other buffers",
 		},
-		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
+		d = {
+			"<cmd>lua require('telescope.builtin').lsp_definitions("
+				.. "{layout_strategy='vertical'})<cr>",
+			"Go to definition",
+		},
 		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
 		i = {
-			"<cmd>lua vim.lsp.buf.implementation()<cr>",
+			"<cmd>lua require('telescope.builtin').lsp_implementations("
+				.. "{layout_strategy='vertical'})<cr>",
 			"Go to implementation",
 		},
 		r = {
