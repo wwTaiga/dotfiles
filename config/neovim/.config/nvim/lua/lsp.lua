@@ -84,7 +84,7 @@ end)
 local nl = require("null-ls")
 local nl_f = nl.builtins.formatting -- Format sources
 local nl_d = nl.builtins.diagnostics -- Diagnostics sources
-nl.config({
+require("null-ls").setup({
 	sources = {
 		-- Lua
 		nl_f.stylua,
@@ -93,8 +93,6 @@ nl.config({
 		nl_f.prettierd,
 		nl_d.eslint_d,
 	},
-})
-require("lspconfig")["null-ls"].setup({
 	on_attach = general_on_attach,
 })
 
