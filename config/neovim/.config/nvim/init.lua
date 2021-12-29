@@ -38,14 +38,6 @@ vim.api.nvim_exec(
 	false
 )
 
--- Set file format to dos when enter .cs file
-vim.api.nvim_exec(
-	[[
-        autocmd BufEnter *.cs :set ff=dos
-    ]],
-	false
-)
-
 -- Plugin
 require("plugins")
 
