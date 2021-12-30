@@ -9,6 +9,7 @@ fi
 
 packages=(
     curl
+    dbeaver
     docker
     docker-compose
     fd
