@@ -104,7 +104,7 @@ wk.register({
 				"Actions",
 			},
 			d = {
-				"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>",
+				"<cmd>lua vim.diagnostic.open_float()<cr>",
 				"Show diagnostics",
 			},
 			i = { "<cmd>LspInfo<cr>", "Lsp info" },
@@ -174,7 +174,7 @@ wk.register({
 	},
 	["<"] = {
 		d = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
 			"Go to prev diagnostic",
 		},
 	},
@@ -183,7 +183,7 @@ wk.register({
 	["<F7>"] = { "<cmd>lua require('dap').step_into()<cr>", "Step into" },
 	[">"] = {
 		d = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>",
+			"<cmd>lua vim.diagnostic.goto_next()<cr>",
 			"Go to next diagnostic",
 		},
 	},

@@ -26,7 +26,6 @@ return require("packer").startup(function(use)
 	use("blackCauldron7/surround.nvim")
 	use("windwp/nvim-autopairs")
 	use("abecodes/tabout.nvim")
-	use("mattn/emmet-vim")
 
 	-- File explorer
 	use("kyazdani42/nvim-tree.lua")
