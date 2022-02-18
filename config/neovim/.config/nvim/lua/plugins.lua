@@ -23,7 +23,7 @@ return require("packer").startup(function(use)
 	-- Editor Utils
 	use("numToStr/Comment.nvim")
 	use("ggandor/lightspeed.nvim")
-	use("blackCauldron7/surround.nvim")
+	use("echasnovski/mini.nvim")
 	use("windwp/nvim-autopairs")
 	use("abecodes/tabout.nvim")
 

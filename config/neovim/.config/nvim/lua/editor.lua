@@ -1,5 +1,15 @@
 -- Surround
-require("surround").setup({ mappings_style = "surround" })
+require("mini.surround").setup({
+	mappings = {
+		add = "ys",
+		delete = "ds",
+		find = "",
+		find_left = "",
+		highlight = "",
+		replace = "cs",
+		update_n_lines = "",
+	},
+})
 
 -- Commentary
 require("Comment").setup({
