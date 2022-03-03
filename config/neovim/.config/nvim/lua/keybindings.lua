@@ -107,6 +107,7 @@ wk.register({
 				"<cmd>lua vim.diagnostic.open_float()<cr>",
 				"Show diagnostics",
 			},
+			f = { "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", "Format text" },
 			i = { "<cmd>LspInfo<cr>", "Lsp info" },
 			l = {
 				name = "List",
